@@ -9,6 +9,7 @@ services:
     ports:
       - 80:80
       - 443:443
+      - 9501:9501
     networks:
       - sentry_network
       - api_network
