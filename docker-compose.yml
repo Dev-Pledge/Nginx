@@ -1,0 +1,39 @@
+version: "3.5"
+
+services:
+
+  nginx:
+    image: nginx:1.13.7
+    volumes:
+      - ./dev.config:/etc/nginx/conf.d:cached
+    ports:
+      - 80:80
+      - 443:443
+    networks:
+      - sentry_network
+      - api_network
+      - auth_network
+      - ui_network
+      - feed_network
+
+
+networks:
+  sentry_network:
+    external:
+      name: global_sentry
+
+  api_network:
+    external:
+      name: devpledge_api
+
+  auth_network:
+    external:
+      name: devpledge_auth
+
+  ui_network:
+    external:
+      name: devpledge_ui
+
+  feed_network:
+    external:
+      name: devpledge_feed
