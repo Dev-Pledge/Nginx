@@ -6,6 +6,7 @@ services:
     image: nginx:1.13.7
     volumes:
       - ./dev.config:/etc/nginx/conf.d:cached
+      - ./dev.ssl:/etc/nginx/ssl:cached
     ports:
       - 80:80
       - 443:443
