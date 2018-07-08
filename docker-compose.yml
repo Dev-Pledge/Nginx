@@ -15,7 +15,6 @@ services:
     networks:
       - sentry_network
       - api_network
-      - auth_network
       - ui_network
       - feed_network
 
@@ -28,10 +27,6 @@ networks:
   api_network:
     external:
       name: devpledge_api
-
-  auth_network:
-    external:
-      name: devpledge_auth
 
   ui_network:
     external:
