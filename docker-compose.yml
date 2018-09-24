@@ -10,6 +10,7 @@ services:
       - ./dev.ssl:/etc/nginx/ssl:cached
     ports:
       - 80:80
+      - 8082:8082
       - 443:443
       - 9501:9501
     networks:
@@ -18,8 +19,8 @@ services:
       - ui_network
       - feed_network
 
-
 networks:
+
   sentry_network:
     external:
       name: global_sentry
